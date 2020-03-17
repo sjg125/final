@@ -8,9 +8,11 @@ DB = Sequel.connect(connection_string)                                          
 DB.create_table! :events do
   primary_key :id
   String :title
-  String :description, text: true
+  String :day_of_week
   String :date
   String :location
+  Number :people_registered
+  String :cuisine
 end
 DB.create_table! :rsvps do
   primary_key :id
@@ -18,18 +20,32 @@ DB.create_table! :rsvps do
   Boolean :going
   String :name
   String :email
-  String :comments, text: true
+  Number :number_of_people, text: true
+  String :dietary_restrictions, text: true
+  String :questions, text: true
+end
+DB.create_table! :users do
+  primary_key :id
+  String :name
+  String :email
+  String :password
 end
 
 # Insert initial (seed) data
 events_table = DB.from(:events)
 
-events_table.insert(title: "Bacon Burger Taco Fest", 
-                    description: "Here we go again bacon burger taco fans, another Bacon Burger Taco Fest is here!",
-                    date: "June 21",
-                    location: "Kellogg Global Hub")
+events_table.insert(title: "Kellogg Board Fellows Dinner (Cancelled)", 
+                    day_of_week: "Monday",
+                    date: "March 30",
+                    location: "Sam's Apartment - 1575 Oak",                    
+                    people_registered: "5",
+                    cuisine: "Italian")
 
-events_table.insert(title: "Kaleapolooza", 
-                    description: "If you're into nutrition and vitamins and stuff, this is the event for you.",
-                    date: "July 4",
-                    location: "Nowhere")
+events_table.insert(title: "Cash Cows Small Group Dinner (Cancelled)", 
+                    day_of_week: "Sunday",
+                    date: "April 5",
+                    location: "Koi - 624 Davis",                    
+                    people_registered: "8",
+                    cuisine: "Japanese")
+
+puts "Success!"
