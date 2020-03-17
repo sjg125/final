@@ -3,9 +3,15 @@ head {
         font-weight: bold;
     }
 
+
+h1   {
+  color: blue;
+  text-align: center  
+}
+
 body {
-        background-color: lightcyan;
-        font: normal 16px Verdana, Arial, sans-serif;
+  background-color: lightcyan;
+  font: normal 10px Verdana, Arial, sans-serif;
     }
 
 p {
@@ -16,13 +22,21 @@ p {
 }
 
 p2 {
+  margin-left: 200px;
+}
+
+p3 {
+  font: normal 18px Verdana, Arial, sans-serif;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
   margin-left: 10px;
 }
 
-h1   {
-  color: blue;
-  text-align: center  
+p3 {
+  font: normal 12px Verdana, Arial, sans-serif;  
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
 }

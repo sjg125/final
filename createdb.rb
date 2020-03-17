@@ -48,4 +48,19 @@ events_table.insert(title: "Cash Cows Small Group Dinner (Cancelled)",
                     people_registered: "8",
                     cuisine: "Japanese")
 
+events_table.insert(title: "Passover", 
+                    day_of_week: "Wednesday",
+                    date: "April 8",
+                    location: "A Jewish facility, without COVID-19, preferably",                    
+                    people_registered: "0",
+                    cuisine: "Traditional Passover")
+                    
+events_table.insert(title: "Beer Pong Tournament (cancelled)", 
+                    day_of_week: "Saturday",
+                    date: "May 2",
+                    location: "Evanston Pub",                    
+                    people_registered: "25",
+                    cuisine: "Alcohol")
+
+
 puts "Success!"

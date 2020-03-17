@@ -55,10 +55,14 @@
         </p>
     </div>
 
-     <div class="col-sm-6">
+      <div class="col-sm-6">
+        <br>
         <p2 class="mt-5">
             <% for event in @events %>
                 <p><a href="/events/<%= event[:id] %>"><%= event[:title] %></a></p>
+                <p><a "/events/<%= event[:id] %>"><%= event[:date] %></a></p>
+                <p><a "/events/<%= event[:id] %>"><%= event[:time] %></a></p>
+                <br>
             <% end %>
         </p2>
      </div>
