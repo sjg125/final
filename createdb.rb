@@ -10,6 +10,7 @@ DB.create_table! :events do
   String :title
   String :day_of_week
   String :date
+  String :time
   String :location
   Number :people_registered
   String :cuisine
@@ -37,13 +38,15 @@ events_table = DB.from(:events)
 events_table.insert(title: "Kellogg Board Fellows Dinner (Cancelled)", 
                     day_of_week: "Monday",
                     date: "March 30",
-                    location: "Sam's Apartment - 1575 Oak",                    
+                    time: "7-9pm",
+                    location: "Sam and Sara's Apartment - 1575 Oak",                    
                     people_registered: "5",
                     cuisine: "Italian")
 
 events_table.insert(title: "Cash Cows Small Group Dinner (Cancelled)", 
                     day_of_week: "Sunday",
                     date: "April 5",
+                    time: "7:30-10pm",
                     location: "Koi - 624 Davis",                    
                     people_registered: "8",
                     cuisine: "Japanese")
@@ -51,16 +54,17 @@ events_table.insert(title: "Cash Cows Small Group Dinner (Cancelled)",
 events_table.insert(title: "Passover", 
                     day_of_week: "Wednesday",
                     date: "April 8",
+                    time: "8pm-12am",
                     location: "A Jewish facility, without COVID-19, preferably",                    
                     people_registered: "0",
                     cuisine: "Traditional Passover")
                     
-events_table.insert(title: "Beer Pong Tournament (cancelled)", 
+events_table.insert(title: "Beer Pong Tournament (Cancelled)", 
                     day_of_week: "Saturday",
                     date: "May 2",
-                    location: "Evanston Pub",                    
+                    time: "9:30-whenever",
+                    location: "Evanston Pub - 1601 Sherman",                    
                     people_registered: "25",
                     cuisine: "Alcohol")
-
 
 puts "Success!"

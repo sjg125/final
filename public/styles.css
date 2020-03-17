@@ -1,40 +1,29 @@
-head {
-        font: normal 20px Helvetica, Helvetica, sans-serif
-        font-weight: bold;
-    }
-
-
 h1   {
+  font: normal 20px Helvetica, Helvetica, sans-serif
+  font-weight: bold;
   color: blue;
   text-align: center  
 }
 
 body {
   background-color: lightcyan;
-  font: normal 10px Verdana, Arial, sans-serif;
+  font: normal 14px Verdana, Arial, sans-serif;
     }
-
-p {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
-}
 
 p2 {
   margin-left: 200px;
 }
 
 p3 {
-  font: normal 18px Verdana, Arial, sans-serif;
+  font: normal 16px Verdana, Arial, sans-serif;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
   margin-left: 10px;
 }
 
-p3 {
-  font: normal 12px Verdana, Arial, sans-serif;  
+p4 {
+  font: normal 12px Verdana, Arial, sans-serif;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
