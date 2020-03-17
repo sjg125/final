@@ -1,8 +1,68 @@
-<h1>Spring Quarter Events (R.I.P)</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<div class="container mt-3">
-    <% for event in @events %>
-        <p><a href="/events/<%= event[:id] %>"><%= event[:title] %></a></p>
-    <% end %>
+    <!-- Google Fonts -->
+    <!-- Swap out "Roboto" for the font(s) you want to use -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    
+    <!-- Your own CSS -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+<h1>
+    <p class="mt-5">
+        Spring Quarter Events (R.I.P)
+    </p>
+</h1>
+
+<div class= "row">
+    <div class="col-sm-6">
+        <p class="mt-5">
+            This website was originally desiged to outline all of our social events for the Spring quarter.
+            <br>
+            <br> 
+            With Coronavirus ravaging our shores and social plans, it has instead it has become a resource to look back on what could have been...
+            <br>
+            <br>
+            It also hosts a selection of pictures from the previous quarter
+            <br>
+            <br>
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="1.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="2.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="3.jpg">
+                    </div>
+                </div>
+            </div>
+        </p>
+    </div>
+
+     <div class="col-sm-6">
+        <p2 class="mt-5">
+            <% for event in @events %>
+                <p><a href="/events/<%= event[:id] %>"><%= event[:title] %></a></p>
+            <% end %>
+        </p2>
+     </div>
 </div>
 
+</body>
+</html>

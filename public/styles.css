@@ -1,0 +1,28 @@
+head {
+        font: normal 20px Helvetica, Helvetica, sans-serif
+        font-weight: bold;
+    }
+
+body {
+        background-color: lightcyan;
+        font: normal 16px Verdana, Arial, sans-serif;
+    }
+
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+p2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+h1   {
+  color: blue;
+  text-align: center  
+}
