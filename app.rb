@@ -169,3 +169,19 @@ get "/logout" do
     session["user_id"] = nil
     redirect "/logins/new"
 end
+
+require "geocoder"
+def view(template); erb template.to_sym; end
+before { puts "Parameters: #{params}" }                                     
+
+#geocode
+
+get "/map" do
+
+    results = Geocoder.search(params["location"])
+    @lat_lng = results.first.coordinates
+    lat = lat_lng[0]
+    lng = lat_lng[1]
+
+    view "map"
+end

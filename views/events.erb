@@ -17,28 +17,29 @@
     
     <!-- Your own CSS -->
     <link rel="stylesheet" href="/styles.css">
+
 </head>
 
 <body>
 
 <h1>
-    <p class="mt-5">
-        Spring Quarter Events (R.I.P)
-    </p>
+        Sam and Sara - Spring Quarter Events (R.I.P)
 </h1>
 
 <div class= "row">
-    <div class="col-sm-6">
-        <p class="mt-5">
-            This website was originally desiged to outline some of the social events we planned to host in the Spring quarter.
+    <div class="col-sm-3">
+        <br>
+            This website was originally desiged to allow folks to browse and sign up for some of the social events we planned to host in the Spring quarter.
             <br>
             <br> 
-            With coronavirus ravaging our shores and social plans, it has instead it has become a resource to look back on what could have been...
+            With coronavirus ravaging our shores and social plans, it has mostly become a resource to look back on what could have been...
+
             <br>
             <br>
-            It also hosts a selection of pictures from the previous quarter
-            <br>
-            <br>
+            It also hosts a selection of pictures from the previous quarter.
+    </div>
+     <div class="col-sm-4">
+     <br>
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -52,21 +53,34 @@
                     </div>
                 </div>
             </div>
-        </p>
     </div>
 
-      <div class="col-sm-6">
-        <p class="mt-5">
+      <div class="col-sm-5">
+        <br>
             <% for event in @events %>
-                <p3><a href="/events/<%= event[:id] %>"><%= event[:title] %></a></p>
+                <p3>
+                    <a href="/events/<%= event[:id] %>"><%= event[:title] %></a>
+                </p3>
+                <br>
                 <p4>
                     <a "/events/<%= event[:id] %>"><%= event[:date]%></a>
                      | 
                     <a "/events/<%= event[:id] %>"><%= event[:time] %></a>
                 </p>
             <% end %>
-        <p>
-     </div>
+    </div>
+</div>
+
+<!--Map Search-->
+ <div class="container mt-5">
+ <p5>
+  <h2>Generate a map for your location (cough*In Evanston*cough) before committing to an event!</h2>
+    <form action="/map">
+        <label>Enter your location:</label>
+            <input type="text" name="location" placeholder=Evanston>
+        <button type="submit" class="btn btn-primary">Find A Map of My Location</submit>
+    </form>
+ </p5>
 </div>
 
 </body>

@@ -1,9 +1,5 @@
 <div class="row">
     <div class="col-sm-9">
-        <h2>
-            <i class="far fa-calendar-alt"></i>
-            <%= @event[:date] %>
-        </h2>
         <h1><%= @event[:title] %></h1>
         <p><%= @event[:description] %></p>
 
@@ -45,4 +41,17 @@
         <h3>How many guests so far?</h3>
         <p><%= @going_count %></p>
     </div>
+
+    <h3>Location</h3>
+        <p><%= @events[:location] %></p>
+        <p><%= @lat_long %></p>
+        <iframe
+        width="300"
+        height="250"
+        frameborder="0" 
+        style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw&q=<%= @lat_long %>&zoom=6" allowfullscreen>
+      </iframe>
+
+
 </div>

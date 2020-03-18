@@ -1,5 +1,12 @@
 h1   {
-  font: normal 20px Helvetica, Helvetica, sans-serif
+  font: normal 30px Helvetica, Helvetica, sans-serif;
+  font-weight: bold;
+  color: blue;
+  text-align: center  
+}
+
+h2   {
+  font: normal 20px Helvetica, Helvetica, sans-serif;
   font-weight: bold;
   color: blue;
   text-align: center  
@@ -29,3 +36,6 @@ p4 {
   margin-right: 10px;
   margin-left: 10px;
 }
+
+p5
+{text-align: center}
