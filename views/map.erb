@@ -38,7 +38,12 @@
         <p>
             <h1>Map for the Location</h1>
                 <div> 
-                    <p><%= @lat_lng%></p>
+                        <iframe
+                        width="1100"
+                        height="350"
+                        frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw&q=<%= @lat %>,<%= @lng %>&zoom=16" allowfullscreen>
+                    </iframe>
                 </div> 
         </p>  
     </div>

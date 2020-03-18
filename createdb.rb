@@ -12,18 +12,21 @@ DB.create_table! :events do
   String :date
   String :time
   String :location
+  String :location_name
   Number :people_registered
   String :cuisine
 end
 DB.create_table! :rsvps do
   primary_key :id
   foreign_key :event_id
+  foreign_key :user_id
   Boolean :going
   String :name
   String :email
   Number :number_of_people, text: true
   String :dietary_restrictions, text: true
   String :questions, text: true
+  String :comments, text: true
 end
 DB.create_table! :users do
   primary_key :id
@@ -39,7 +42,8 @@ events_table.insert(title: "Kellogg Board Fellows Dinner (Cancelled)",
                     day_of_week: "Monday",
                     date: "March 30",
                     time: "7-9pm",
-                    location: "Sam and Sara's Apartment - 1575 Oak",                    
+                    location: "1575 Oak Avenue, Evanston, IL 60201",    
+                    location_name: "Sam and Sara's Apartment",       
                     people_registered: "5",
                     cuisine: "Italian")
 
@@ -47,7 +51,8 @@ events_table.insert(title: "Cash Cows Small Group Dinner (Cancelled)",
                     day_of_week: "Sunday",
                     date: "April 5",
                     time: "7:30-10pm",
-                    location: "Koi - 624 Davis",                    
+                    location: "624 Davis Street, Evanston, IL 60201",    
+                    location_name: "Koi Restaurant",                
                     people_registered: "8",
                     cuisine: "Japanese")
 
@@ -55,7 +60,8 @@ events_table.insert(title: "Passover",
                     day_of_week: "Wednesday",
                     date: "April 8",
                     time: "8pm-12am",
-                    location: "A Jewish facility, without COVID-19, preferably",                    
+                    location: "2020 Orrington Avenue, Evanston, IL 60201",       
+                    location_name: "A Jewish facility, without COVID-19",
                     people_registered: "0",
                     cuisine: "Traditional Passover")
                     
@@ -63,7 +69,8 @@ events_table.insert(title: "Beer Pong Tournament (Cancelled)",
                     day_of_week: "Saturday",
                     date: "May 2",
                     time: "9:30-whenever",
-                    location: "Evanston Pub - 1601 Sherman",                    
+                    location: "1601 Sherman, Evanston, IL 60201",    
+                    location_name: "Evanston Pub",                
                     people_registered: "25",
                     cuisine: "Alcohol")
 

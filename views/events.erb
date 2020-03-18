@@ -22,10 +22,12 @@
 
 <body>
 
+<!--Title-->
 <h1>
         Sam and Sara - Spring Quarter Events (R.I.P)
 </h1>
 
+<!--Description-->
 <div class= "row">
     <div class="col-sm-3">
         <br>
@@ -33,7 +35,6 @@
             <br>
             <br> 
             With coronavirus ravaging our shores and social plans, it has mostly become a resource to look back on what could have been...
-
             <br>
             <br>
             It also hosts a selection of pictures from the previous quarter.
@@ -55,6 +56,7 @@
             </div>
     </div>
 
+<!--List of Events-->
       <div class="col-sm-5">
         <br>
             <% for event in @events %>
@@ -66,7 +68,11 @@
                     <a "/events/<%= event[:id] %>"><%= event[:date]%></a>
                      | 
                     <a "/events/<%= event[:id] %>"><%= event[:time] %></a>
-                </p>
+                     | 
+                    <a "/events/<%= event[:id] %>"><%= event[:location] %></a>
+                <br>
+                <br>
+                </p4>
             <% end %>
     </div>
 </div>
@@ -74,7 +80,7 @@
 <!--Map Search-->
  <div class="container mt-5">
  <p5>
-  <h2>Generate a map for your location (cough*In Evanston*cough) before committing to an event!</h2>
+  <h2>Generate a map for your location (cough*see above*cough) before further exploring an event!</h2>
     <form action="/map">
         <label>Enter your location:</label>
             <input type="text" name="location" placeholder=Evanston>

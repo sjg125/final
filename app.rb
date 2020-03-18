@@ -180,8 +180,8 @@ get "/map" do
 
     results = Geocoder.search(params["location"])
     @lat_lng = results.first.coordinates
-    lat = lat_lng[0]
-    lng = lat_lng[1]
+    @lat = @lat_lng[0]
+    @lng = @lat_lng[1]
 
     view "map"
 end
