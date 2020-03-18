@@ -13,7 +13,7 @@ DB.create_table! :events do
   String :time
   String :location
   String :location_name
-  Number :event_size
+  Integer :event_size
   String :cuisine
 end
 DB.create_table! :rsvps do
