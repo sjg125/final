@@ -1,0 +1,68 @@
+[1mdiff --git a/Gemfile b/Gemfile[m
+[1mindex 6514c44..2e394ca 100644[m
+[1m--- a/Gemfile[m
+[1m+++ b/Gemfile[m
+[36m@@ -1,16 +1,16 @@[m
+[32m+[m
+ source 'https://rubygems.org'[m
+ [m
+ gem 'sinatra'[m
+ gem 'sinatra-contrib'[m
+ gem 'sequel'[m
+[31m-group :development do [m
+[31m- gem 'sqlite3'[m
+[31m-end[m
+[31m-group :production do[m
+[31m-  gem 'pg'[m
+[31m-end[m
+ gem 'twilio-ruby'[m
+ gem 'bcrypt'[m
+ gem 'geocoder'[m
+[31m-gem 'forecast_io'[m
+[31m-gem 'httparty'[m
+\ No newline at end of file[m
+[32m+[m
+[32m+[m[32mgroup :development do[m
+[32m+[m[32m  gem 'sqlite3'[m
+[32m+[m[32mend[m
+[32m+[m[32mgroup :production do[m
+[32m+[m[32m  gem 'pg'[m
+[32m+[m[32mend[m
+\ No newline at end of file[m
+[1mdiff --git a/Gemfile.lock b/Gemfile.lock[m
+[1mindex 4aeec9a..597d386 100644[m
+[1m--- a/Gemfile.lock[m
+[1m+++ b/Gemfile.lock[m
+[36m@@ -5,22 +5,10 @@[m [mGEM[m
+     bcrypt (3.1.13)[m
+     faraday (1.0.0)[m
+       multipart-post (>= 1.2, < 3)[m
+[31m-    forecast_io (2.0.2)[m
+[31m-      faraday[m
+[31m-      hashie[m
+[31m-      multi_json[m
+     geocoder (1.6.2)[m
+[31m-    hashie (4.1.0)[m
+[31m-    httparty (0.18.0)[m
+[31m-      mime-types (~> 3.0)[m
+[31m-      multi_xml (>= 0.5.2)[m
+     jwt (2.2.1)[m
+[31m-    mime-types (3.3.1)[m
+[31m-      mime-types-data (~> 3.2015)[m
+[31m-    mime-types-data (3.2019.1009)[m
+     mini_portile2 (2.4.0)[m
+     multi_json (1.14.1)[m
+[31m-    multi_xml (0.6.0)[m
+     multipart-post (2.1.1)[m
+     mustermann (1.1.1)[m
+       ruby2_keywords (~> 0.0.1)[m
+[36m@@ -56,9 +44,7 @@[m [mPLATFORMS[m
+ [m
+ DEPENDENCIES[m
+   bcrypt[m
+[31m-  forecast_io[m
+   geocoder[m
+[31m-  httparty[m
+   pg[m
+   sequel[m
+   sinatra[m
