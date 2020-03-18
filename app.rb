@@ -136,8 +136,8 @@ post "/users/create" do
     # Send Twilio-based confirmation via text - Set Up
 
         # put your API credentials here (found on your Twilio dashboard)
-        account_sid = "AC43b6cb3bd52eb4e6080c1cdcf7627db4"
-        auth_token = "5e60445169e90df37a2e8cca6a00ded0"
+        account_sid = ENV["TWILIO_ACCOUNT_SID"]
+        auth_token = ENV["TWILIO_AUTH_TOKEN"]
 
         # set up a client to talk to the Twilio REST API
         client = Twilio::REST::Client.new(account_sid, auth_token)
