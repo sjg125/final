@@ -133,7 +133,23 @@ post "/users/create" do
             password: BCrypt::Password.create(params["password"])
         )
 
-        redirect "/logins/new"
+    # Send Twilio-based confirmation via text - Set Up
+
+        # put your API credentials here (found on your Twilio dashboard)
+        account_sid = "AC43b6cb3bd52eb4e6080c1cdcf7627db4"
+        auth_token = "5e60445169e90df37a2e8cca6a00ded0"
+
+        # set up a client to talk to the Twilio REST API
+        client = Twilio::REST::Client.new(account_sid, auth_token)
+
+    # Send Twilio-based confirmation via text - Send
+        
+        client.messages.create(
+        from: "+12057234348", 
+        to: "+17185707661",
+        body: "This is a phone verification message that a new user has created an account on your website"
+        )  
+    redirect "/logins/new"
     end
 end
 

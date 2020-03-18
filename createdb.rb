@@ -22,6 +22,7 @@ DB.create_table! :rsvps do
   foreign_key :user_id
   Boolean :going
   String :name
+  String :phone
   String :dietary_restrictions, text: true
   String :questions_comments, text: true
 end

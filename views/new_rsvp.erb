@@ -9,9 +9,8 @@
     </select>
 </div>
 <div class="form-group">
-    <label>Email Address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <label>Phone Number</label>
+    <textarea class="form-control" rows="1" name="phone"></textarea>
 </div>
 <div class="form-group">
     <label>Dietary Restrictions (if applicable)?</label>
@@ -23,3 +22,12 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+  # send this SMS confirmation from your trial Twilio number to the non-Twilio number which was just submitted
+  client.messages.create(
+  from: "+12057234348", 
+  to: "+17185707661",
+  body: "This is a phone verification message to confirm that you have RSVPed for one of Sam and Sara's Spring Quarter Events.
+  <br>
+  If you did not make this reservation, please contact Sam at 718-570-7661"
+  )
