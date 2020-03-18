@@ -64,7 +64,7 @@ post "/events/:id/rsvps/create" do
     rsvps_table.insert(
         event_id: @event[:id],
         user_id: session["user_id"],
-        comments: params["comments"],
+        questions_comments: params["questions_comments"],
         going: params["going"]
     )
 
@@ -92,7 +92,7 @@ post "/rsvps/:id/update" do
     if @current_user && @current_user[:id] == @rsvp[:id]
         rsvps_table.where(id: params["id"]).update(
             going: params["going"],
-            comments: params["comments"]
+            questions_comments: params["questions_comments"]
         )
 
         redirect "/events/#{@event[:id]}"

@@ -13,7 +13,7 @@ DB.create_table! :events do
   String :time
   String :location
   String :location_name
-  Number :people_registered
+  Number :event_size
   String :cuisine
 end
 DB.create_table! :rsvps do
@@ -22,11 +22,8 @@ DB.create_table! :rsvps do
   foreign_key :user_id
   Boolean :going
   String :name
-  String :email
-  Number :number_of_people, text: true
   String :dietary_restrictions, text: true
-  String :questions, text: true
-  String :comments, text: true
+  String :questions_comments, text: true
 end
 DB.create_table! :users do
   primary_key :id
@@ -44,7 +41,7 @@ events_table.insert(title: "Kellogg Board Fellows Dinner (Cancelled)",
                     time: "7-9pm",
                     location: "1575 Oak Avenue, Evanston, IL 60201",    
                     location_name: "Sam and Sara's Apartment",       
-                    people_registered: "5",
+                    event_size: "5",
                     cuisine: "Italian")
 
 events_table.insert(title: "Cash Cows Small Group Dinner (Cancelled)", 
@@ -53,7 +50,7 @@ events_table.insert(title: "Cash Cows Small Group Dinner (Cancelled)",
                     time: "7:30-10pm",
                     location: "624 Davis Street, Evanston, IL 60201",    
                     location_name: "Koi Restaurant",                
-                    people_registered: "8",
+                    event_size: "8",
                     cuisine: "Japanese")
 
 events_table.insert(title: "Passover", 
@@ -62,7 +59,7 @@ events_table.insert(title: "Passover",
                     time: "8pm-12am",
                     location: "2020 Orrington Avenue, Evanston, IL 60201",       
                     location_name: "A Jewish facility, without COVID-19",
-                    people_registered: "0",
+                    event_size: "10",
                     cuisine: "Traditional Passover")
                     
 events_table.insert(title: "Beer Pong Tournament (Cancelled)", 
@@ -71,7 +68,7 @@ events_table.insert(title: "Beer Pong Tournament (Cancelled)",
                     time: "9:30-whenever",
                     location: "1601 Sherman, Evanston, IL 60201",    
                     location_name: "Evanston Pub",                
-                    people_registered: "25",
+                    event_size: "32",
                     cuisine: "Alcohol")
 
 puts "Success!"

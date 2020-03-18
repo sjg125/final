@@ -25,16 +25,16 @@
   
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="/">Spring Quarter Events (R.I.P)</a>
+            <a class="navbar-brand" href="/">Sam and Sara - Spring Quarter Events (R.I.P)</a>
             <ul class="navbar-nav mr-auto">
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Back to Home</a>
+                    <a class="nav-link" href="/">Back to Home |</a>
                 </li>
                 <% if @current_user %>
                     <li class="navbar-text">
-                        Logged in as <%= @current_user[:name] %>
+                        Logged in as <%= @current_user[:name] %> |
                     </li>
                     <li class="nav-item">
                         <a href="/logout" class="nav-link">Logout</a>

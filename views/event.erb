@@ -1,7 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Fonts -->
+    <!-- Swap out "Roboto" for the font(s) you want to use -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    
+    <!-- Your own CSS -->
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<body>
+
+
+<h1><%= @event[:title] %></h1>
+    <br>
+
 <div class = row>
     <div class="col-sm-9">
-        <h1><%= @event[:title] %></h1>
-            <br>
         <p1>When? | <%= @event[:day_of_week] %>, </p1>
         <p1> <%= @event[:date] %>, </p1>
         <p1> <%= @event[:time] %></p1>
@@ -11,26 +37,24 @@
         <p1> <%= @event[:location_name] %></p1>
             <br>
             <br>
-        <p1>How many guests so far? | </p1>
-        <p1> <%= @event[:people_registered] %></p1>
+        <p1>How many guests can there be? | </p1>
+        <p1> <%= @event[:event_size] %></p1>
             <br>
             <br>
         <p1>What kind of food will be served? | </p1>
         <p1> <%= @event[:cuisine] %></p1>
             <br>
-        <p class="mt-5">
+        <p class="mt-4">
              <% if @current_user %>
                 <a href="/events/<%= @event[:id] %>/rsvps/new" class="btn btn-primary">RSVP now!</a>
              <% else %>
-                <a href="/logins/new" class="btn btn-danger">Please sign in to RSVP</a>
+                <a href="/logins/new" class="btn btn-primary">Please sign in to RSVP</a>
              <% end %>
         </p>
     </div>
 
     <div class="col-sm-3">
-        <br>
-        <br>
-        <h4> RSVPs to Date </h4>
+        <h3> RSVPs to Date </h3>
         <% for rsvp in @rsvps %>
             <p4 class="media">
                 <% if rsvp[:going] %>

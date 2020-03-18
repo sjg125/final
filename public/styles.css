@@ -12,13 +12,15 @@ h2   {
   text-align: center  
 }
 
-body {
-  background-color: lightcyan;
-  font: normal 14px Verdana, Arial, sans-serif;
-    }
+h3   {
+  font: normal 20px Helvetica, Helvetica, sans-serif;
+  font-weight: bold;
+  color: blue;
+  text-align: left  
+}
 
 p1 {
-font: normal 14px Verdana, Arial, sans-serif;
+    font: normal 14px Verdana, Arial, sans-serif;
     }
 
 p2 {
@@ -43,3 +45,8 @@ p4 {
 
 p5
 {text-align: center}
+
+body {
+  background-color: lightcyan;
+  font: normal 14px Verdana, Arial, sans-serif;
+    }
