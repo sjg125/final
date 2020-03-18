@@ -22,12 +22,3 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-  # send this SMS confirmation from your trial Twilio number to the non-Twilio number which was just submitted
-  client.messages.create(
-  from: "+12057234348", 
-  to: "+17185707661",
-  body: "This is a phone verification message to confirm that you have RSVPed for one of Sam and Sara's Spring Quarter Events.
-  <br>
-  If you did not make this reservation, please contact Sam at 718-570-7661"
-  )
