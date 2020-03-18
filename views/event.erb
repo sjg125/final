@@ -2,27 +2,44 @@
     <div class="col-sm-9">
         <h1><%= @event[:title] %></h1>
             <br>
-        <p1>When? | <%= @event[:date] %></p1>
+        <p1>When? | <%= @event[:day_of_week] %>, </p1>
+        <p1> <%= @event[:date] %>, </p1>
+        <p1> <%= @event[:time] %></p1>
             <br>
-        <p1>Where? | <%= @event[:location] %></p1>
+            <br>
+        <p1>Where? | <%= @event[:location] %> | </p1>
+        <p1> <%= @event[:location_name] %></p1>
+            <br>
             <br>
         <p1>How many guests so far? | </p1>
-        <p1><%= @going_count %></p1>
+        <p1> <%= @event[:people_registered] %></p1>
             <br>
+            <br>
+        <p1>What kind of food will be served? | </p1>
+        <p1> <%= @event[:cuisine] %></p1>
+            <br>
+        <p class="mt-5">
+             <% if @current_user %>
+                <a href="/events/<%= @event[:id] %>/rsvps/new" class="btn btn-primary">RSVP now!</a>
+             <% else %>
+                <a href="/logins/new" class="btn btn-danger">Please sign in to RSVP</a>
+             <% end %>
+        </p>
     </div>
 
     <div class="col-sm-3">
         <br>
         <br>
+        <h4> RSVPs to Date </h4>
         <% for rsvp in @rsvps %>
-            <div class="media">
+            <p4 class="media">
                 <% if rsvp[:going] %>
-                    <i class="fas fa-thumbs-up fa-3x mr-3"></i>
+                    Yes - 
                 <% else %>
-                    <i class="fas fa-thumbs-down fa-3x mr-3"></i>
+                    No -
                 <% end %>
                 <div class="media-body">
-                    <h5 class="mt-0">
+                    <div class="mt-0">
                         <%= @users_table.where(id: rsvp[:user_id]).to_a[0][:name] %>
 
                         <small>
@@ -31,17 +48,10 @@
                                 (<a href="/rsvps/<%= rsvp[:id] %>/edit">edit</a> | <a href="/rsvps/<%= rsvp[:id] %>/destroy">delete</a>)
                             <% end %>
                         </small>
-                    </h5>
+                    </div>
                     <%= rsvp[:comments] %>
                 </div>
-            </div>
+            </p4>
         <% end %>
-            <p class="mt-5">
-                <% if @current_user %>
-                    <a href="/events/<%= @event[:id] %>/rsvps/new" class="btn btn-primary">RSVP now!</a>
-                <% else %>
-                    <a href="/logins/new" class="btn btn-danger">Please sign in to RSVP</a>
-                <% end %>
-            </p>
     </div>
 </div>
